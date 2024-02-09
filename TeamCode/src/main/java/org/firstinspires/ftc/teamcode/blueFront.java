@@ -36,23 +36,24 @@ public class blueFront extends LinearOpMode {
         clawGrabber.setPosition(1);
         Nothing(.3, 1000);
         StrafeLeft(.3, 1200);
-        Forward(.3, 1500);
+        Forward(.3, 1400);
         SpinLeft(.3, 1200);
-        wristDown(.5, 1000);
-        armUpStay(1);
-        wristUp(.5, 450);
-        Forward(.3, 1000);
-        wristDown(.3, 300);
         Nothing(.3, 1000);
+        wristDown(.3, 600);
+        armUpStay(.9);
+        Nothing(.3, 1000);
+        wristUp(.3, 200);
+        Forward(.2, 900);
+        wristDown(.2, 750);
+        Nothing(.3, 500);
+        armUpStay(.7);
         clawGrabber.setPosition(0);
         Nothing(.3 ,200);
-        Forward(.3, 200);
-        armDown(.1, 300);
-        wristUp(.1, 100);;
-        Nothing(.3, 1000);
         Backward(.3, 800);
-        StrafeLeft(.3, 600);
+        StrafeLeft(.3, 1500);
+        wristUp(.3, 500);
         Forward(.3, 1000);
+
 
         //down to spinleft should be good, run through then test
     }
