@@ -57,8 +57,17 @@ public class Teleop2 extends LinearOpMode {
         clawArmRight.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         clawArmLeft.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
-        frontRight.setDirection(DcMotorSimple.Direction.REVERSE);
         clawArmRight.setDirection(DcMotorSimple.Direction.REVERSE);
+
+        frontLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        frontRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backLeft.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+        backRight.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+
+        frontLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        frontRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        backLeft.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        backRight.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         double drivespeed = 1;
 
@@ -173,6 +182,11 @@ public class Teleop2 extends LinearOpMode {
             } else {
                 airplaneLauncher.setPosition(1);
             }
+            telemetry.addData("frontLeft: ", frontLeft.getCurrentPosition());
+            telemetry.addData("frontRight: ", frontRight.getCurrentPosition());
+            telemetry.addData("backLeft: ", backLeft.getCurrentPosition());
+            telemetry.addData("backRight: ", backRight.getCurrentPosition());
+            telemetry.update();
         }
     }
 }
